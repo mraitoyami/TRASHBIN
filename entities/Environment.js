@@ -151,7 +151,11 @@ export class Environment {
         
         // Background for readability
         context.fillStyle = 'rgba(0, 0, 0, 0.6)';
-        context.roundRect(0, 0, canvas.width, canvas.height, 20);
+        if (context.roundRect) {
+            context.roundRect(0, 0, canvas.width, canvas.height, 20);
+        } else {
+            context.rect(0, 0, canvas.width, canvas.height);
+        }
         context.fill();
         
         context.font = 'bold 64px Orbitron, sans-serif';
