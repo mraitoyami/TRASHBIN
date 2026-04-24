@@ -1254,7 +1254,7 @@ function renderLeaderboard(){
   if(data.length===0){container.innerHTML='';empty.style.display='block';return;}
   empty.style.display='none';
   const medals=['🥇','🥈','🥉'];
-  container.innerHTML=data.slice(0,50).map((e,i)=>{
+  container.innerHTML=data.map((e,i)=>{
     const medal=i<3?medals[i]:`<span style="color:#555;font-size:12px;">#${i+1}</span>`;
     const wonBadge=e.won?`<span style="background:linear-gradient(135deg,#FFD700,#ff8800);color:#000;border-radius:5px;padding:1px 6px;font-size:9px;font-weight:900;margin-left:4px;">🏆 ЯЛСАН</span>`:'';
     const bg=i===0?'linear-gradient(135deg,rgba(255,215,0,0.14),rgba(255,140,0,0.07))':i===1?'linear-gradient(135deg,rgba(200,200,200,0.09),rgba(180,180,180,0.04))':i===2?'linear-gradient(135deg,rgba(180,120,60,0.11),rgba(160,100,40,0.05))':'rgba(255,255,255,0.025)';
