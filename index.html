@@ -544,7 +544,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#111;font-family:'Nu
       const arr = Object.entries(data).map(([id, val]) => ({ id, ...val }));
       arr.sort((a, b) => (b.score || 0) - (a.score || 0));
       console.log('✅ Loaded', arr.length, 'scores');
-      return arr.slice(0, 100);
+      return arr;
     } catch(e) {
       console.error('❌ Load error:', e);
       return [];
